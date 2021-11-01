@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -49,12 +51,33 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         }
         if(item.getItemId()==R.id.itmsignout)
         {
-            AlertDialog.Builder builder=new AlertDialog.Builder(context:this)
+
+            AlertDialog.Builder builder=new AlertDialog.Builder(this);
+            builder.setMessage("Are You Sure");
+            builder.setCancelable(true);
+            builder.setPositiveButton("Yes",this);
+            builder.setNegativeButton("No",this);
+            AlertDialog dialog=builder.create();
+            dialog.show();
+
+
         }
+        return true;
     }
 
     @Override
-    public void onClick(DialogInterface dialogInterface, int i) {
+    public void onClick(DialogInterface dialogInterface, int which) {
+        if(which==dialogInterface.BUTTON_POSITIVE);
+        {
+            Toast.makeText(getApplicationContext(), "loging out", Toast.LENGTH_SHORT).show();
+            dialogInterface.cancel();
+            finish();//to close current activity
+        }
+        if(which==dialogInterface.BUTTON_NEGATIVE);
+        {
+            Toast.makeText(getApplicationContext(), "loging out canceled", Toast.LENGTH_SHORT).show();
+            dialogInterface.cancel();
+        }
 
     }
 }
