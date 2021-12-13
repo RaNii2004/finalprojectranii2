@@ -47,7 +47,7 @@ public class SignUpActivity extends AppCompatActivity {
         String fname = etfirstName.getText().toString();
         String lname = etLastName.getText().toString();
         String phone = etPhoneNumber.getText().toString();
-        String btn = btnSignUp.getText().toString();
+        String btn=btnSignUp.getText().toString();
 
         if (email.length() < 5 || email.indexOf('@') <= 0) {
 
