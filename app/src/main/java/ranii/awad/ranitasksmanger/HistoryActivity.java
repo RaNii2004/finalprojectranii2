@@ -17,6 +17,8 @@ public class HistoryActivity extends AppCompatActivity {
         svSearch=findViewById(R.id.svSearch);
         lvHistory=findViewById(R.id.lvHistory);
 
+
+
     }
 }
 

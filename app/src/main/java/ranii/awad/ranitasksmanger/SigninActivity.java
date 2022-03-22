@@ -70,7 +70,7 @@ public class SigninActivity extends AppCompatActivity {
 
     }
 
-    private void Signingin(String email, String password)
+    private void Signingin(String email, String password)//تفحص اذا تم تسجيل الدخول بنجاح اذا تم يظهر نص(Sign in Approved) حلاف ذالك يظهر نص (Sign in eror)
     {
         FirebaseAuth auth=FirebaseAuth.getInstance();
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
